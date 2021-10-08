@@ -1,50 +1,47 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  runApp(
+    MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.green,
-          appBar: AppBar(
-            backgroundColor: const Color(0xFF151026),
-            title: Text('TreeKode'),
-            leading: Icon(
-              Icons.menu,
+        backgroundColor: Colors.purple,
+        appBar: AppBar(
+          title: Center(child: Text('TreeKode')),
+          leading: Icon(Icons.menu),
+        ),
+        body: Center(
+          child: Center(
+            child: Image(
+                image: NetworkImage('https://images.unsplash.com/photo-1543549790-8b5f4a028cfb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z3JlYXQlMjBob3JuZWQlMjBvd2x8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80')
             ),
-
           ),
-          body: Center(child: Column(children: <Widget>[
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+         type: BottomNavigationBarType.fixed,
+          onTap: (value){
+           //respond
+          },
+          items: [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.menu),
+            label:'home',
+            ) ,
 
-            Container(
-              margin: EdgeInsets.all(25),
-              child: FlatButton(
-                child: Text('Image Preview', style: TextStyle(fontSize: 20.0),),
-                onPressed: () {},
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.all(25),
-              child: FlatButton(
-                child: Text('Detect', style: TextStyle(fontSize: 20.0),),
-                color: const Color(0xFF151026),
-                textColor: Colors.white,
-                onPressed: () {},
-              ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+            label: 'menu'
             ),
 
-          ]
-          ))
+          ],
+        ),
+
       ),
-    );
-  }
+    ),
+
+  );
+
+
+
+
 }
+
