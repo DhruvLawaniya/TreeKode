@@ -4,18 +4,17 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.purple,
-        appBar: AppBar(
-          title: Center(child: Text('TreeKode')),
-          leading: Icon(Icons.menu),
-        ),
-        body: Center(
-          child: Center(
-            child: Image(
-                image: NetworkImage('https://images.unsplash.com/photo-1543549790-8b5f4a028cfb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z3JlYXQlMjBob3JuZWQlMjBvd2x8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80')
+        backgroundColor: Colors.white,
+        appBar:
+            PreferredSize(
+              preferredSize: Size.fromHeight(80.0),
+              child: AppBar(
+                  title: Center(child: Text('TreeKode')),
+                  backgroundColor : Colors.green[900],
+                  // leading: Icon(Icons.menu),
+
+              ),
             ),
-          ),
-        ),
         bottomNavigationBar: BottomNavigationBar(
          type: BottomNavigationBarType.fixed,
           onTap: (value){
@@ -23,25 +22,25 @@ void main() {
           },
           items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.menu),
-            label:'home',
+                icon: Icon(Icons.account_box_sharp),
+              label: 'Profile',
             ) ,
-
             BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-            label: 'menu'
+                icon: Icon(Icons.menu),
+              label: 'Menu',
             ),
-
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.bookmark),
+              label: 'Search',
+            ),
           ],
         ),
-
       ),
     ),
-
   );
-
-
-
-
 }
 
